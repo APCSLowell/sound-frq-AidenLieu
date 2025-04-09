@@ -38,19 +38,16 @@ public class Sound
    */
   public void trimSilenceFromBeginning()
   {
-    int zero = 0;
-    boolean num = false;
-    for(int i = 0; i < this.sample.length; i++){
-      if(this.sample[i] == 0 && num == false){
-        zero++
-      }else{
-        num = true;
-      }
+   int a = 0;
+   for(int i - 0; i < this.sample.length; i++}{
+    if(this.sample[i] == 0){
+     a++;
     }
-    int[] b = new int[this.sample.length-zero];
-     for(int i = 0; i < this.sample.length; i++){
-       b[i - zero] = this.sample[i];
-     }
-    this.sample = b;
+   }
+ int[] b = new int[this.sample.length]
+ for(int i = 0; i < b.length; i++){
+ b[i] = this.sample[i + a];
+ }
+this.sample = b;
   }
 }
