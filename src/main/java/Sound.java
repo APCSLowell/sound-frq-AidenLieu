@@ -15,18 +15,18 @@ public class Sound
    */
   public int limitAmplitude(int limit)
   {  
-    int a = 0; 
-    for(int i = 0; i < this.sample.length; i++){
-      if(this.sample[i] > limit){
-        a++
-        this.sample[i] = limit;
-      }
-     if(this.sample[i] < -limit){
-      this.sample[i] = -limit
-       a++;
-     }
-    }
-    return a;
+    int numChanged = 0;
+ for (int i = 0; i < this.samples.length; i++) {
+ if (this.samples[i] < -limit) {
+ this.samples[i] = -limit;
+ numChanged++;
+ }
+ if (this.samples[i] > limit) {
+ this.samples[i] = limit;
+ numChanged++;
+ }
+ }
+ return numChanged
   }
 
 
