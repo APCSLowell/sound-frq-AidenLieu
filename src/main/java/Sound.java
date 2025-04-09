@@ -1,4 +1,4 @@
-import java.util.*;
+ import java.util.*;
 public class Sound
 {
   /** the array of values in this sound; guaranteed not to be null */
@@ -17,9 +17,11 @@ public class Sound
   {  
     int a = 0; 
     for(int i = 0; i < sample.length; i++){
-      if(sample[i] > limit ||
+      if(sample[i] > limit || sample[i] < -1 * limit){
+        a++
+      }
     }
-    return 0;
+    return a;
   }
 
 
@@ -31,6 +33,19 @@ public class Sound
    */
   public void trimSilenceFromBeginning()
   {
-    /* to be implemented in part (b) */
+    int zero = 0;
+    boolean num = false;
+    for(int i = 0; i < sample.length; i++){
+      if(sample[i] == 0 && num == false){
+        zero++
+      }else{
+        num = true;
+      }
+    }
+    int[] b = new int[sample.length-zero];
+     for(int i = 0; i < sample.length; i++){
+       b[i - zero] = sample[i];
+     }
+    sample = b;
   }
 }
