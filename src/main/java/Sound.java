@@ -42,7 +42,7 @@ public class Sound
     while(this.sample[i] == 0){
      a++;
     }
- int[] b = new int[this.sample.length]
+ int[] b = new int[this.sample.length - a]
  for(int i = 0; i < b.length; i++){
  b[i] = this.sample[i + a];
  }
