@@ -16,13 +16,13 @@ public class Sound
   public int limitAmplitude(int limit)
   {  
     int a = 0; 
-    for(int i = 0; i < sample.length; i++){
-      if(sample[i] > limit){
+    for(int i = 0; i < this.sample.length; i++){
+      if(this.sample[i] > limit){
         a++
-        sample[i] = limit;
+        this.sample[i] = limit;
       }
-     if(sample[i] < -1 * limit){
-      sample[i] = limit * - 1
+     if(this.sample[i] < -1 * limit){
+      this.sample[i] = limit * - 1
        a++;
      }
     }
@@ -40,17 +40,17 @@ public class Sound
   {
     int zero = 0;
     boolean num = false;
-    for(int i = 0; i < sample.length; i++){
-      if(sample[i] == 0 && num == false){
+    for(int i = 0; i < this.sample.length; i++){
+      if(this.sample[i] == 0 && num == false){
         zero++
       }else{
         num = true;
       }
     }
-    int[] b = new int[sample.length-zero];
-     for(int i = 0; i < sample.length; i++){
-       b[i - zero] = sample[i];
+    int[] b = new int[this.sample.length-zero];
+     for(int i = 0; i < this.sample.length; i++){
+       b[i - zero] = this.sample[i];
      }
-    sample = b;
+    this.sample = b;
   }
 }
